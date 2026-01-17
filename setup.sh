@@ -46,7 +46,7 @@ for script in "${SCRIPTS[@]}"; do
     echo "Executing: $script_name"
     
     if bash "$script"; then
-        ((SUCCESS_COUNT++))
+        SUCCESS_COUNT=$((SUCCESS_COUNT + 1))
     else
         EXIT_CODE=$?
         echo "✗ $script_name failed with exit code $EXIT_CODE"
